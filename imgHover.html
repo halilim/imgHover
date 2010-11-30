@@ -1,0 +1,29 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>imgHover</title>
+</head>
+<body>
+    <script type="text/javascript">/*<![CDATA[*/
+            $(function (){
+                imgHover(".gallery img", function (el){
+                    var src = $(el).attr("src");
+                    var pos = src.lastIndexOf("_");
+                    return src.substr(0, pos+1) + "2" + src.substr(pos+2);
+                });
+            });
+    /*]]>*/</script>
+    <ul class="gallery">
+        <li><a href="test1.html"><img src="test1_1.jpg" alt="" /></a></li>
+        <li><a href="test2.html"><img src="test2_1.jpg" alt="" /></a></li>
+        <li><a href="test3.html"><img src="test3_1.jpg" alt="" /></a></li>
+    </ul>
+    <!--
+    Bigger images like :
+    test1_2.jpg
+    test2_2.jpg
+    test3_2.jpg
+    -->
+</body>
+</html>

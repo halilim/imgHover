@@ -1,5 +1,5 @@
 /**
- * Img hover like Google Image search
+ * Img hover like Google Image search from https://github.com/halilim/imgHover
  */
 function imgHover(elems, hoverSrcFunc, hoverDivClass)
 {
@@ -25,7 +25,7 @@ function imgHover(elems, hoverSrcFunc, hoverDivClass)
                 '<div class="">' + 
                     '<a href="">' +
                         '<img src="" alt="" title="" />' +
-                        '<span></span>' +
+                        '<span style="display:none"></span>' +
                     '</a>' +
                 '</div>');
             $this.data("imgHover.div", div);
@@ -38,7 +38,9 @@ function imgHover(elems, hoverSrcFunc, hoverDivClass)
         div.find("img").css({"width" : origW, "height" : origH});
         div.find("a").attr({"href": $this.parent("a").attr("href")});
         div.find("img").attr({"src": targetSrc, "alt": $this.attr("alt")});
-        div.find("span").text($this.attr("alt"));
+        if ($this.attr("alt")) {
+            $("span", div).text($this.attr("alt")).show();
+        }
         div.show();
         var targetWidth = hoverW;
         var targetHeight = hoverH;

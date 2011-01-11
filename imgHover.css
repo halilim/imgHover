@@ -1,4 +1,5 @@
 .photoHover{position: absolute; padding: 5px;font-weight: bold;text-align: center;background-color: #fff;border: solid 1px #bbb;clear: both;-moz-box-shadow: 2px 2px 8px #000000;}
 .photoHover a{display: block;}
 .photoHover a:hover{text-decoration: none;}
-.photoHover img{display: block;margin: 0 0 5px 0;}
+.photoHover span, .photoHover img{display: block;}
+.photoHover span{margin:  5px 0 0 0;}
